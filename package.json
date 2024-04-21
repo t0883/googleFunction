@@ -1,0 +1,14 @@
+{
+  "name": "googlefunction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script/javascript/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tobias Andersson",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.3.0"
+  }
+}
