@@ -2,13 +2,18 @@
   "name": "googlefunction",
   "version": "1.0.0",
   "description": "",
-  "main": "script/javascript/index.js",
+  "main": "script/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local-debug": "npx @google-cloud/functions-framework --target=helloHero",
+    "build": "tsc ./script/index",
+    "deploy": "gcloud functions deploy helloHero --trigger-http --gen2 --allow-unauthenticated --runtime=nodejs20",
+    "gcp-build": ""
   },
   "author": "Tobias Andersson",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/functions-framework": "^3.3.0"
+    "@google-cloud/functions-framework": "^3.3.0",
+    "dotenv": "^16.4.5"
   }
 }

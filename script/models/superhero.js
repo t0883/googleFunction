@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Superhero = void 0;
-class Superhero {
-    constructor(name) {
+var Superhero = /** @class */ (function () {
+    function Superhero(name) {
         this.name = name;
     }
-    getName() {
+    Superhero.prototype.getName = function () {
         return this.name;
-    }
-}
+    };
+    return Superhero;
+}());
 exports.Superhero = Superhero;
-//# sourceMappingURL=superhero.js.map
