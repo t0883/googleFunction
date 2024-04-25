@@ -2,18 +2,19 @@
   "name": "googlefunction",
   "version": "1.0.0",
   "description": "",
-  "main": "script/index.js",
+  "main": "script/javascript/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local-debug": "npx @google-cloud/functions-framework --target=helloHero",
-    "build": "tsc ./script/index",
-    "deploy": "gcloud functions deploy helloHero --trigger-http --gen2 --allow-unauthenticated --runtime=nodejs20",
+    "local-debug": "cd script/javascript && npx @google-cloud/functions-framework --target=helloWebmail",
+    "build": "cd script && tsc",
+    "deploy": "gcloud functions deploy helloWebmail --trigger-http --gen2 --allow-unauthenticated --runtime=nodejs20 --env-vars-file .env.yaml",
     "gcp-build": ""
   },
   "author": "Tobias Andersson",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/functions-framework": "^3.3.0",
+    "@sendgrid/mail": "^8.1.3",
     "dotenv": "^16.4.5"
   }
 }

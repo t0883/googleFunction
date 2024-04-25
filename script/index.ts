@@ -1,12 +1,27 @@
-import { Superhero } from "./models/superhero";
 import { http } from "@google-cloud/functions-framework";
-require("dotenv").config();
+import mail, {MailService} from "@sendgrid/mail";
+import "dotenv/config";
 
-http("helloHero", (req, res) => {
-    const hero = new Superhero(req.body.name);
+http("helloWebmail", (req, res) => {
 
+    // console.log(process.env.SENDGRID_API_KEY);
 
     console.log(process.env.TEST_KEY);
+    mail.setApiKey(process.env.SENDGRID_API_KEY!);
 
-    res.send(hero.getName());
+
+    const msg = {
+        to: req.body.to,
+        from: "tumskruven@gmail.com",
+        subject: req.body.subject,
+        text: req.body.text
+    };
+
+    mail.send(msg).then(()=>{
+        console.log("Email sent");
+    }).catch((error) => {
+        console.log(error);
+    });
+
+    res.send("Hello");
 });
