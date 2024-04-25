@@ -11,7 +11,7 @@ require("dotenv/config");
     mail_1.default.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
         to: req.body.to,
-        from: "tumskruven@gmail.com",
+        from: "-",
         subject: req.body.subject,
         text: req.body.text
     };
