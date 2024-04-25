@@ -4,9 +4,6 @@ import "dotenv/config";
 
 http("helloWebmail", (req, res) => {
 
-    // console.log(process.env.SENDGRID_API_KEY);
-
-    console.log(process.env.TEST_KEY);
     mail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 
