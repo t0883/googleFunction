@@ -12,7 +12,7 @@ http("helloWebmail", (req, res) => {
 
     const msg = {
         to: req.body.to,
-        from: "tumskruven@gmail.com",
+        from: "-",
         subject: req.body.subject,
         text: req.body.text
     };
